@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Juego Bean</title>
+    </h:head>
+    <h:body>
+        <h:form id="guess_form">
+            <p:panelGrid columns="2" layout="grid">
+
+                <p:outputLabel id="title" style="font-size: 1.5em; font-weight: bold" value="#{userBean.message}"/>
+                <p:outputLabel style="display: none;" value="#{guessBean.currentNumber}"/>
+                <p:panelGrid columns="1" layout="grid">
+                    <p:outputLabel value=" #{guessBean.gameStatus} "/>
+                    <p:inputText value="#{guessBean.guessNumber}"/>
+                    <p:outputLabel value=" Número de intento: #{guessBean.numAttempts} "/>
+                    <p:outputLabel value=" Premio total: #{ guessBean.currentPrize} "/>
+                    <p:commandButton value=" Enviar " update="guess_form" actionListener="#{guessBean.guess(guessBean.guessNumber)}"/>
+                    <p:commandButton value=" Reiniciar " update="guess_form" actionListener="#{guessBean.restart()}"/>
+                </p:panelGrid>
+                <p:dataTable value="#{guessBean.failedAttempts}" var="attempt" varStatus="status">
+                    <p:column headerText="Failed Attempts">
+                        <h:outputText value="#{attempt}" />
+                    </p:column>
+                </p:dataTable>
+
+            </p:panelGrid>
+
+        </h:form>
+
+    </h:body>
+</html>

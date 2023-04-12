@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+
+
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,00' rel='stylesheet' type='text/css'>
+
+        <style>
+            *{
+                font-family: 'Open Sans', sans-serif;
+            }
+            body{
+                background: #f8f8f8;
+                color:white;
+                text-align: center;
+            }
+
+            button{
+                border:none;
+                border-radius: 10%;
+            }
+
+            h1{
+                color: rgb(0,0,0);
+                text-transform: uppercase;
+
+            }
+            #number
+            {
+                font-size: 1em;
+                font-family: inherit;
+                text-align: center;
+                outline: none;
+
+                width: 15%;
+
+                padding: 10px 10px 10px 20px;
+
+                border: 3px;
+                box-shadow: 15px 5px 15px 0px rgba(93, 87, 87, 0.35);
+            }
+            #submit
+            {
+                margin-top: 3em;
+
+                width: 10%;
+
+                font-size: 1em;
+                text-align: center;
+
+                border: 1px solid #838383;
+
+                background-color: rgb(255, 255, 255);
+                box-shadow: 15px 5px 15px 0px rgba(93, 87, 87, 0.35);
+                border-radius:4px;
+                font-family: 'Open Sans', sans-serif;
+                cursor: pointer;
+            }
+        </style>
+
+    </head>
+    <body>
+        <script>
+            function submitForm() {
+                if (isNaN(document.forms["completeForm"]["numberId"].value)) {
+                    alert("debe ingresar un numero");
+                    return false;
+                }
+            }
+        </script>
+        <form name="formid" action="/onlineServlet" method="GET">
+            <label ><h1>Ingrese el número del id</h1></label><br>
+            <input id="number" name="id"  placeholder="Ingresar el número del id" ><br>
+            <input id="submit" type="submit" value="Enviar" onclick="submitForm()">
+        </form>
+
+    </body>
+</html>

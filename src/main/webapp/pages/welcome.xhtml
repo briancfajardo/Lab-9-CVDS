@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Start Page</title>
+
+        <style>
+            *{
+                font-family: 'Open Sans', sans-serif;
+            }
+            body{
+                display: flex;
+                justify-content: center; /* centra horizontalmente */
+                align-items: center;
+                height: 100vh; /* altura del contenedor igual a la altura de la pantalla */
+                background: #f8f8f8;
+                text-align: center;
+
+            }
+
+            h1
+            {
+                color: rgb(0,0,0);
+                text-transform: uppercase;
+                text-shadow: 15px 5px 15px rgba(61, 57, 57, 0.35);
+                font-size: 6em;
+            }
+            #contenedor
+            {
+                display: flex;
+
+                justify-content: center;
+
+                height: 2em;
+            }
+
+            p
+            {
+                color: rgb(0,0,0);
+                text-align: left;
+                font-size: 2em;
+                margin: 0;
+            }
+
+        </style>
+
+    </h:head>
+    <h:body>
+
+        <h:form>
+            <h1>bienvenido</h1>
+            <div id="contenedor">
+                <p>Ingrese su nombre:</p>
+                <p:inputText value="#{userBean.name}"/>
+                <p:commandButton value=" Enviar " action="game.xhtml"/>
+            </div>
+
+        </h:form>
+    </h:body>
+</html>
